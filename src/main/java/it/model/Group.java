@@ -14,7 +14,7 @@ import java.util.List;
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
+    private Long id;
 
     //Date of finish-дата окончания
     private String dateOfFinish;

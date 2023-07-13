@@ -44,7 +44,7 @@ public class StudentRepositoryImpl implements StudentRepository {
         student.setEmail( newStudent.getEmail() );
         student.setFirst_name( newStudent.getFirst_name() );
         student.setLast_name( newStudent.getLast_name() );
-        student.setStudyformat( newStudent.getStudyformat() );
+        student.setStudyFormat( newStudent.getStudyFormat() );
         session.merge( student );
     }
 

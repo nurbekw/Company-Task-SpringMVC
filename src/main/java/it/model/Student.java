@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
+    private Long id;
 
     private String email;
 
@@ -21,9 +21,9 @@ public class Student {
 
     private String last_name;
 
-    private String studyformat;
+    //online or offline
+    private String studyFormat;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Group groups;
-
 }

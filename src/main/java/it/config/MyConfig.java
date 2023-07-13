@@ -37,7 +37,7 @@ public class MyConfig implements WebMvcConfigurer {
 
     @Bean
     public ViewResolver getView() {
-        return new InternalResourceViewResolver("/WEB_INF/view/", ".html");
+        return new InternalResourceViewResolver("/WEB-INF/view/", ".jsp");
     }
 
     @Bean
@@ -50,13 +50,6 @@ public class MyConfig implements WebMvcConfigurer {
         return dataSource;
     }
 
-    public Properties properties(){
-        Properties properties = new Properties();
-        properties.setProperty(Environment.DRIVER,"org.hibernate.dialect.PostgreSQLDialect");
-        properties.setProperty(Environment.SHOW_SQL,"true");
-        properties.setProperty(Environment.HBM2DDL_AUTO,"create");
-        return  properties;
-    }
 
     @Bean
     public LocalSessionFactoryBean localSessionFactoryBean() {
@@ -72,5 +65,12 @@ public class MyConfig implements WebMvcConfigurer {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
         transactionManager.setSessionFactory(localSessionFactoryBean().getObject());
         return transactionManager;
+    }
+    public Properties properties(){
+        Properties properties = new Properties();
+        properties.setProperty(Environment.DRIVER,"org.hibernate.dialect.PostgreSQLDialect");
+        properties.setProperty(Environment.SHOW_SQL,"true");
+        properties.setProperty(Environment.HBM2DDL_AUTO,"create");
+        return  properties;
     }
 }
