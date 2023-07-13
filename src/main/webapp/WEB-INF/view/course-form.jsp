@@ -15,8 +15,8 @@
 <form action="/course/controller/form-course" method="post">
     <label>Course name:</label><input type="text" name="courseName">
     <label>Duration:</label><input type="text" name="duration">
-    <c:forEach items="${connection}" var="company">
-    <input type="checkbox" name="company" value="${company.id}" />
+    <c:forEach items="${company}" var="company">
+    <input type="checkbox" id="${company.id}" name="id" value="${company.id}" />
     <label for="${company.id}">${company.companyName}</label>
     </c:forEach>
     <input type="submit" value="save-course">

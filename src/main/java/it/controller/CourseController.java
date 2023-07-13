@@ -44,7 +44,6 @@ public class CourseController {
         course.setDuration(duration);
         course.setCompany(company);
         courseRepository.saveCourse(course);
-        companyRepository.saveCompany(course.getCompany());
         return "redirect:/";
     }
 
