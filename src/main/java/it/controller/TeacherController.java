@@ -1,6 +1,5 @@
 package it.controller;
 
-import it.model.Course;
 import it.model.Teacher;
 import it.repository.CourseRepository;
 import it.repository.TeacherRepository;
