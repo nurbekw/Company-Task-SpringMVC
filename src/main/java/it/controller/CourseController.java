@@ -14,48 +14,48 @@ public class CourseController {
     private final CompanyRepository companyRepository;
 
     private final CourseRepository courseRepository;
-
-    private final GroupRepository groupRepository;
-
-    private final StudentRepository studentRepository;
-
-    private  final TeacherRepository teacherRepository;
-    public CourseController(CompanyRepository companyRepository, CourseRepository courseRepository, GroupRepository groupRepository, StudentRepository studentRepository, TeacherRepository teacherRepository) {
+    public CourseController(CompanyRepository companyRepository, CourseRepository courseRepository) {
         this.companyRepository = companyRepository;
         this.courseRepository = courseRepository;
-        this.groupRepository = groupRepository;
-        this.studentRepository = studentRepository;
-        this.teacherRepository = teacherRepository;
     }
 
+    @GetMapping("/menu")
+    public String menu(){
+        return "redirect:/";
+    }
+
+    @GetMapping("/backToCompany")
+    public String backToCompany(){
+        return "redirect:/";
+    }
 
     @GetMapping("/courseee")
     public String findAll(Model model) {
         model.addAttribute("findAllCourse", courseRepository.findAllCourse());
-        model.addAttribute("findAllCompany",companyRepository.findAllCompany());
         return "find-all-course";
     }
 
     @PostMapping("/form-course")
-    public String save(@RequestParam("courseName") String courseName, @RequestParam("duration") String duration,@PathVariable("id") Long id) {
+    public String save(@RequestParam("courseName") String courseName, @RequestParam("duration") String duration,@RequestParam("id") Long id) {
         Company company = companyRepository.findById(id);
         Course course = new Course();
         course.setCourseName(courseName);
         course.setDuration(duration);
         course.setCompany(company);
         courseRepository.saveCourse(course);
-        return "redirect:/";
+        return "redirect:/course/controller/courseee";
     }
 
     @GetMapping("/courseForm")
-    public String saveCoursePage() {
+    public String saveCoursePage(Model model) {
+        model.addAttribute("conCompany",companyRepository.findAllCompany());
         return "course-form";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteById(@PathVariable("id") Long id) {
         courseRepository.deleteById(id);
-        return "redirect:/";
+        return "redirect:/course/controller/courseee";
     }
 
     @GetMapping("/get/by/{id}")
@@ -79,13 +79,12 @@ public class CourseController {
         course.setCourseName(courseName);
         course.setDuration(duration);
         courseRepository.updateById(id, course);
-        companyRepository.updateById(id,course.getCompany());
-        return "redirect:/";
+        return "redirect:/course/controller/courseee";
     }
 
     @GetMapping("/clear-course")
     public String clearCourse() {
         courseRepository.clear();
-        return "redirect:/";
+        return "redirect:/course/controller/courseee";
     }
 }

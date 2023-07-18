@@ -1,6 +1,6 @@
 package it.repository.impl;
 
-import it.model.Group;
+import it.model.Groups;
 import it.model.Student;
 import it.repository.StudentRepository;
 import org.hibernate.Session;

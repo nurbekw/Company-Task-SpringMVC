@@ -11,25 +11,14 @@ public class CompanyController {
 
     private final CompanyRepository companyRepository;
 
-    private final CourseRepository courseRepository;
 
-    private final GroupRepository groupRepository;
-
-    private final StudentRepository studentRepository;
-
-    private  final TeacherRepository teacherRepository;
-    public CompanyController(CompanyRepository companyRepository, CourseRepository courseRepository, GroupRepository groupRepository, StudentRepository studentRepository, TeacherRepository teacherRepository) {
+    public CompanyController(CompanyRepository companyRepository) {
         this.companyRepository = companyRepository;
-        this.courseRepository = courseRepository;
-        this.groupRepository = groupRepository;
-        this.studentRepository = studentRepository;
-        this.teacherRepository = teacherRepository;
     }
 
     @GetMapping("/")
     public String findAll(Model model){
         model.addAttribute("findAllCompany",companyRepository.findAllCompany());
-        model.addAttribute("findAllCourse", courseRepository.findAllCourse());
         return "find-all";
     }
 
@@ -49,8 +38,7 @@ public class CompanyController {
 
     @GetMapping("/delete/{id}")
     public String deleteById(@PathVariable("id")Long id){
-        Company company = companyRepository.findById(id);
-        companyRepository.deleteById(company.getId());
+        companyRepository.deleteById(id);
         return "redirect:/";
     }
 
@@ -81,6 +69,6 @@ public class CompanyController {
     @GetMapping("/clear-company")
     public String clearCompany(){
         companyRepository.clear();
-        return "resirect:/";
+        return "redirect:/";
     }
 }

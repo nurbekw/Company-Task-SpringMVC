@@ -13,9 +13,14 @@
 <body>
 <form action="/group/controller/group/update/${group.id}" method="post">
   <label>Group name:</label><input value="${group.groupName}" type="text" name="groupName">
-  <label>Date of start:</label><input value="${group.dateOfStart}" type="text" name="dateOfStart">
-    <label>Date of finish:</label><input value="${group.dateOfFinish}" type="text" name="dateOfFinish">
+  <label>Date of start:</label><input value="${group.dateOfStart}" type="date" name="dateOfStart">
+    <label>Date of finish:</label><input value="${group.dateOfFinish}" type="date" name="dateOfFinish">
+    <br>
     <input type="submit" value="update-group">
+  <br>
+  <button><a href="/group/controller/grouppp">BACK</a></button>
+    <br>
+    <button><a href="/group/controller/menu">MENU</a></button>
 </form>
 </body>
 </html>

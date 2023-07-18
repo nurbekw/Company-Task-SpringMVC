@@ -25,13 +25,13 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${findAllStident}" var="student">
+    <c:forEach items="${findAllStudent}" var="student">
         <tr>
 
             <td>${student.id}</td>
 
             <td>
-                <a href="/student/controller/get/by/${student.id}">${student.firs_name}</a>
+                <a href="/student/controller/get/by/${student.id}">${student.first_name}</a>
             </td>
 
             <td>${student.last_name}</td>
@@ -45,7 +45,6 @@
                     <button type="submit">DELETE</button>
                 </form>
             </td>
-
             <td>
                 <form action="/student/controller/update/${student.id}" method="get">
                     <button type="submit">UPDATE</button>
@@ -60,5 +59,9 @@
 <a href="/student/controller/studentForm">save-student</a>
 <br>
 <a href="/student/controller/clear-student">truncate</a>
+<br>
+<button><a href="/group/controller/grouppp">BACK</a></button>
+<br>
+<button><a href="/student/controller/menu">MENU</a></button>
 </body>
 </html>

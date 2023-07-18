@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="it.controller.studyformat.StudyFormatEnum" %><%--
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page import="it.controller.studyformat.StudyFormat" %><%--
   Created by IntelliJ IDEA.
   User: nurbe
   Date: 12.07.2023
@@ -17,10 +18,20 @@
   <label>Last name:</label><input type="text" name="last_name">
   <label>email:</label><input type="email" name="email">
     <select name="studyFormat" size="1">
-        <option value="first"><c:set var="ONLINE" value="<%=StudyFormatEnum.ONLINE%>"/></option>
-        <option selected="selected" value="second"><c:set var="OFFLINE" value="<%=StudyFormatEnum.OFFLINE%>"/></option>
+        <option>ONLINE</option>
+        <option>OFFLINE</option>
     </select>
+    <br>
+    <c:forEach items="${conGroup}" var="group">
+        <input type="checkbox" id="${group.id}" name="id" value="${group.id}" />
+        <label for="${group.id}">${group.groupName}</label>
+    </c:forEach>
+    <br>
     <input type="submit" value="save-student">
+    <br>
+    <button><a href="/student/controller/studenttt"> BACK </a></button>
+    <br>
+    <button><a href="/student/controller/menu">MENU</a></button>
 </form>
 </body>
 </html>

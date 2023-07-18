@@ -1,20 +1,18 @@
 package it.repository;
 
-import it.model.Course;
-import it.model.Group;
-
+import it.model.Groups;
 import java.util.List;
 
 public interface GroupRepository {
-    void saveGroup(Group group);
+    void saveGroup(Groups group);
 
-    List<Group> findAllGroup();
+    List<Groups> findAllGroup();
 
-    Group findById(Long id);
+    Groups findById(Long id);
 
     void deleteById(Long id);
 
-    void updateById(Long id,Group newGroup);
+    void updateById(Long id,Groups newGroup);
 
     void clear();
 }

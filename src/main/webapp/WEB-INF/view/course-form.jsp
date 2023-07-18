@@ -14,12 +14,18 @@
 <body>
 <form action="/course/controller/form-course" method="post">
     <label>Course name:</label><input type="text" name="courseName">
-    <label>Duration:</label><input type="text" name="duration">
-    <c:forEach items="${company}" var="company">
+    <label>Duration:</label><input type="date" name="duration">
+    <br>
+    <c:forEach items="${conCompany}" var="company">
     <input type="checkbox" id="${company.id}" name="id" value="${company.id}" />
     <label for="${company.id}">${company.companyName}</label>
     </c:forEach>
+    <br>
     <input type="submit" value="save-course">
+    <br>
+    <button><a href="/course/controller/courseee">BACK</a></button>
+    <br>
+    <button><a href="/course/controller/menu">MENU</a></button>
 </form>
 </body>
 </html>

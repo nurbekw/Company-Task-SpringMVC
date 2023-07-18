@@ -18,6 +18,7 @@
         <th>id</th>
         <th>Course name</th>
         <th>Duration</th>
+        <th>Teacher</th>
         <th>delete</th>
         <th>update</th>
     </tr>
@@ -30,6 +31,13 @@
                 <a href="/course/controller/get/by/${course.id}">${course.courseName}</a>
             </td>
             <td>${course.duration}</td>
+
+            <td>
+                <button>
+                    <a href="/teacher/controller/teacherrr">TEACHER</a>
+                </button>
+            </td>
+
             <td>
                 <form action="/course/controller/delete/${course.id}" method="get">
                     <button type="submit">DELETE</button>
@@ -47,5 +55,9 @@
 <a href="/course/controller/courseForm">save-course</a>
 <br>
 <a href="/course/controller/clear-course">truncate</a>
+<br>
+<button><a href="/course/controller/backToCompany">BACK</a></button>
+<br>
+<button><a href="/course/controller/menu">MENU</a></button>
 </body>
 </html>

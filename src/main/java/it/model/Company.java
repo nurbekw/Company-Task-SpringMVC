@@ -26,5 +26,5 @@ public class Company {
     private List<Course> course;
 
     @OneToMany(mappedBy = "company",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<Group> group;
+    private List<Groups> group;
 }

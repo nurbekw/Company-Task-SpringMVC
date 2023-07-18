@@ -13,8 +13,13 @@
 <body>
 <form action="/course/controller/course/update/${course.id}" method="post">
     <label>Course name:</label><input value="${course.courseName}" type="text" name="courseName">
-    <label>Duration:</label><input value="${course.duration}" type="text" name="duration">
+    <label>Duration:</label><input value="${course.duration}" type="date" name="duration">
+    <br>
     <input type="submit" value="update-course">
+    <br>
+    <button><a href="/course/controller/courseee">BACK</a></button>
+    <br>
+    <button><a href="/course/controller/menu">MENU</a></button>
 </form>
 </body>
 </html>

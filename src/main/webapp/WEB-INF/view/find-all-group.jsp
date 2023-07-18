@@ -19,6 +19,7 @@
         <th>Group name</th>
         <th>Date of start</th>
         <th>Date of finish</th>
+        <th>Student</th>
         <th>delete</th>
         <th>update</th>
     </tr>
@@ -35,6 +36,12 @@
             <td>${group.dateOfStart}</td>
 
             <td>${group.dateOfFinish}</td>
+
+            <td>
+                <button>
+                <a href="/student/controller/studenttt">STUDENT</a>
+                </button>
+            </td>
 
             <td>
                 <form action="/group/controller/delete/${group.id}" method="get">
@@ -54,5 +61,9 @@
 <a href="/group/controller/groupForm">save-group</a>
 <br>
 <a href="/group/controller/clear-group">truncate</a>
+<br>
+<button><a href="/group/controller/backToCompany">BACK</a></button>
+<br>
+<button><a href="/group/controller/menu">MENU</a></button>
 </body>
 </html>

@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<table>
+<table border="1px">
     <thead>
     <tr>
         <th>id</th>
@@ -24,7 +24,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="findAllTeacher" var="teacher">
+    <c:forEach items="${findAllTeacher}" var="teacher">
         <tr>
             <td>${teacher.id}</td>
 
@@ -56,5 +56,9 @@
 <a href="/teacher/controller/teacherForm">save-teacher</a>
 <br>
 <a href="/teacher/controller/clear-teacher">truncate</a>
+<br>
+<button><a href="/course/controller/courseee">BACK</a></button>
+<br>
+<button><a href="/teacher/controller/menu">MENU</a></button>
 </body>
 </html>

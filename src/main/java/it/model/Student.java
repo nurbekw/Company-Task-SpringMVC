@@ -1,5 +1,6 @@
 package it.model;
 
+import it.controller.studyformat.StudyFormat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,8 +23,8 @@ public class Student {
     private String last_name;
 
     //online or offline
-    private String studyFormat;
+    private StudyFormat studyFormat;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private Group groups;
+    private Groups groups;
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: nurbe
@@ -11,11 +12,21 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/form-teacher" method="post">
-  <label>Email:</label><input type="text" name="email">
-  <label>First name:</label><input type="text" name="first_name">
-  <label>Last name:</label><input type="text" name="last_name">
-  <input type="submit" value="save-teacher">
+<form action="/teacher/controller/form-teacher" method="post">
+    <label>Email:</label><input type="text" name="email">`
+    <label>First name:</label><input type="text" name="first_name">
+    <label>Last name:</label><input type="text" name="last_name">
+    <br>
+    <c:forEach items="${conCourses}" var="course">
+        <input type="checkbox" id="${course.id}" name="id" value="${course.id}"/>
+        <label for="${course.id}">${course.courseName}</label>
+    </c:forEach>
+    <br>
+    <input type="submit" value="save-teacher">
+    <br>
+    <button><a href="/course/controller/courseee">BACK</a></button>
+    <br>
+    <button><a href="/teacher/controller/menu">MENU</a></button>
 </form>
 </body>
 </html>

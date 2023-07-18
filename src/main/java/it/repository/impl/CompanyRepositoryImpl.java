@@ -49,4 +49,6 @@ public class CompanyRepositoryImpl implements CompanyRepository {
         Session session = sessionFactory.getCurrentSession();
         session.createQuery("delete from Company").executeUpdate();
     }
+
+
 }

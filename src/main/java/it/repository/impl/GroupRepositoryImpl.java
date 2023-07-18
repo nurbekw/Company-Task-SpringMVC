@@ -1,6 +1,6 @@
 package it.repository.impl;
 
-import it.model.Group;
+import it.model.Groups;
 import it.repository.GroupRepository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -17,29 +17,29 @@ public class GroupRepositoryImpl implements GroupRepository {
     @Autowired
     private SessionFactory sessionFactory;
 
-    public void saveGroup(Group group) {
+    public void saveGroup(Groups group) {
         Session session = sessionFactory.getCurrentSession();
         session.save( group );
     }
 
-    public List<Group> findAllGroup() {
+    public List<Groups> findAllGroup() {
         Session session = sessionFactory.getCurrentSession();
-        return session.createQuery("select m from Group m",Group.class).getResultList();
+        return session.createQuery("select m from Groups m",Groups.class).getResultList();
     }
 
-    public Group findById(Long id) {
+    public Groups findById(Long id) {
         Session session = sessionFactory.getCurrentSession();
-        return session.get( Group.class,id );
+        return session.get( Groups.class,id );
     }
 
     public void deleteById(Long id) {
         Session session = sessionFactory.getCurrentSession();
-        session.createQuery("delete from Group where id=:groupId").setParameter("groupId",id).executeUpdate();
+        session.createQuery("delete from Groups where id=:groupId").setParameter("groupId",id).executeUpdate();
     }
 
-    public void updateById(Long id, Group newGroup) {
+    public void updateById(Long id, Groups newGroup) {
         Session session = sessionFactory.getCurrentSession();
-        Group group = findById( id );
+        Groups group = findById( id );
         group.setGroupName( newGroup.getGroupName() );
         group.setDateOfStart( newGroup.getDateOfStart() );
         group.setDateOfFinish( newGroup.getDateOfFinish() );
@@ -48,6 +48,6 @@ public class GroupRepositoryImpl implements GroupRepository {
 
     public void clear() {
         Session session = sessionFactory.getCurrentSession();
-        session.createQuery("delete from Group ").executeUpdate();
+        session.createQuery("delete from Groups ").executeUpdate();
     }
 }

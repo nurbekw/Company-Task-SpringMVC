@@ -26,11 +26,11 @@ public class Course {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
-            name = "course_groups"
+            name = "groups_courses"
             , joinColumns = @JoinColumn(name = "course_id")
             , inverseJoinColumns = @JoinColumn(name = "group_id")
     )
-    private List<Group> group;
+    private List<Groups> group;
 
     @OneToOne(mappedBy = "courses",cascade = CascadeType.ALL)
     private Teacher teacher;
