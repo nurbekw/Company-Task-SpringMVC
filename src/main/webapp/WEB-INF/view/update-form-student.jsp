@@ -10,15 +10,21 @@
 <html>
 <head>
     <title>Title</title>
+  <style>
+    <%@include file="/WEB-INF/view/css/styleForm.css"%>
+  </style>
 </head>
 <body>
 <form action="/student/controller/student/update/${student.id}" method="post">
   <label>First name:</label><input value="${student.first_name}" type="text" name="first_name">
+  <br>
   <label>Last name:</label><input value="${student.last_name}" type="text" name="last_name">
+  <br>
   <label>email:</label><input value="${student.email}" type="email" name="email">
+  <br>
   <select name="studyFormat" size="1">
-    <option value="first"><c:set var="ONLINE" value="<%=StudyFormat.ONLINE%>"/></option>
-    <option selected="selected" value="second"><c:set var="OFFLINE" value="<%=StudyFormat.OFFLINE%>"/></option>
+    <option>ONLINE</option>
+    <option>OFFLINE</option>
   </select>
   <br>
   <input type="submit" value="update-student">

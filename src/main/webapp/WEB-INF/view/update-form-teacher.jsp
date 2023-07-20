@@ -9,11 +9,16 @@
 <html>
 <head>
     <title>Title</title>
+  <style>
+    <%@include file="/WEB-INF/view/css/styleForm.css"%>
+  </style>
 </head>
 <body>
 <form action="/teacher/controller/teacher/update/${teacher.id}" method="post">
   <label>Email:</label><input value="${teacher.email}" type="text" name="email">
+  <br>
   <label>First name:</label><input value="${teacher.first_name}" type="text" name="first_name">
+  <br>
   <label>Last name:</label><input value="${teacher.last_name}" type="text" name="last_name">
     <br>
   <input type="submit" value="update-teacher">

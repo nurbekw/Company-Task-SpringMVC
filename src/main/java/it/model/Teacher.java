@@ -21,6 +21,6 @@ public class Teacher {
 
     private String last_name;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne
     private Course courses;
 }

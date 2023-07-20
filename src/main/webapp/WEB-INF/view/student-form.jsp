@@ -11,19 +11,25 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        <%@include file="/WEB-INF/view/css/styleForm.css"%>
+    </style>
 </head>
 <body>
 <form action="/student/controller/form-student" method="post">
   <label>First name:</label><input type="text" name="first_name">
+    <br>
   <label>Last name:</label><input type="text" name="last_name">
+    <br>
   <label>email:</label><input type="email" name="email">
+    <br>
     <select name="studyFormat" size="1">
         <option>ONLINE</option>
         <option>OFFLINE</option>
     </select>
     <br>
     <c:forEach items="${conGroup}" var="group">
-        <input type="checkbox" id="${group.id}" name="id" value="${group.id}" />
+        <input type="checkbox" id="${group.id}" name="id" value="${group.id}" class="asd"/>
         <label for="${group.id}">${group.groupName}</label>
     </c:forEach>
     <br>

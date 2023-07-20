@@ -10,20 +10,25 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        <%@include file="/WEB-INF/view/css/styleForm.css"%>
+    </style>
 </head>
 <body>
 <form action="/group/controller/form-group" method="post">
     <label>Group name:</label><input type="text" name="groupName">
+    <br>
     <label>Date of start:</label><input type="date" name="dateOfStart">
+    <br>
     <label>Date of finish:</label><input type="date" name="dateOfFinish">
     <br>
     <c:forEach items="${conCompanies}" var="company">
-        <input type="checkbox" id="${company.id}" name="id" value="${company.id}" />
+        <input type="checkbox" id="${company.id}" name="id" value="${company.id}" class="asd"/>
         <label for="${company.id}">${company.companyName}</label>
     </c:forEach>
     <br>
     <c:forEach items="${conCourse}" var="idCourse">
-        <input type="checkbox" id="${idCourse.id}" name="idCourse" value="${idCourse.id}" />
+        <input type="checkbox" id="${idCourse.id}" name="idCourse" value="${idCourse.id}" class="asd"/>
         <label for="${idCourse.id}">${idCourse.courseName}</label>
     </c:forEach>
     <br>

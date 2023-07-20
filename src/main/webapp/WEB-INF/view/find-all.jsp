@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Company</title>
+    <style>
+        <%@include file="/WEB-INF/view/css/style.css"%>
+    </style>
 </head>
 <body>
-<table border="1px" >
+<table border="1px">
     <thead>
     <tr>
         <th>id</th>
@@ -28,11 +31,15 @@
             <td>${company.locatedCounty}</td>
 
             <td>
+                <button>
                 <a href="/course/controller/courseee">COURSE</a>
+                </button>
             </td>
 
             <td>
+                <button>
                 <a href="/group/controller/grouppp">GROUP</a>
+                </button>
             </td>
 
             <td>
@@ -50,8 +57,13 @@
     
     </tbody>
 </table>
+<button class="button">
 <a href="/companyForm">save-company</a>
+</button>
     <br>
+<br>
+<button class="button">
 <a href="/clear-company">truncate</a>
+</button>
 </body>
 </html>

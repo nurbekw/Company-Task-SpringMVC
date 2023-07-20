@@ -25,6 +25,6 @@ public class Student {
     //online or offline
     private StudyFormat studyFormat;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Groups groups;
 }

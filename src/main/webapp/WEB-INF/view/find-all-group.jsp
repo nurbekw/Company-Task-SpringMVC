@@ -10,6 +10,9 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        <%@include file="/WEB-INF/view/css/style.css"%>
+    </style>
 </head>
 <body>
 <table border="1px" >
@@ -58,12 +61,23 @@
     </c:forEach>
     </tbody>
 </table>
+<button class="button">
 <a href="/group/controller/groupForm">save-group</a>
+</button>
 <br>
+<br>
+<button class="button">
 <a href="/group/controller/clear-group">truncate</a>
+</button>
 <br>
-<button><a href="/group/controller/backToCompany">BACK</a></button>
 <br>
-<button><a href="/group/controller/menu">MENU</a></button>
+<button class="button">
+<a href="/group/controller/backToCompany">BACK</a>
+</button>
+<br>
+<br>
+<button class="button">
+<a href="/group/controller/menu">MENU</a>
+</button>
 </body>
 </html>

@@ -10,6 +10,9 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        <%@include file="/WEB-INF/view/css/style.css"%>
+    </style>
 </head>
 <body>
 <table border="1px">
@@ -56,12 +59,23 @@
     </c:forEach>
     </tbody>
 </table>
+<button class="button">
 <a href="/student/controller/studentForm">save-student</a>
+</button>
 <br>
+<br>
+<button class="button">
 <a href="/student/controller/clear-student">truncate</a>
+</button>
 <br>
-<button><a href="/group/controller/grouppp">BACK</a></button>
 <br>
-<button><a href="/student/controller/menu">MENU</a></button>
+<button class="button">
+<a href="/group/controller/grouppp">BACK</a>
+</button>
+<br>
+<br>
+<button class="button">
+<a href="/student/controller/menu">MENU</a>
+</button>
 </body>
 </html>

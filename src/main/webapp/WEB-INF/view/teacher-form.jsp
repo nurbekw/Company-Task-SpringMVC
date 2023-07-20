@@ -10,15 +10,20 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        <%@include file="/WEB-INF/view/css/styleForm.css"%>
+    </style>
 </head>
 <body>
 <form action="/teacher/controller/form-teacher" method="post">
-    <label>Email:</label><input type="text" name="email">`
+    <label>Email:</label><input type="text" name="email">
+    <br>
     <label>First name:</label><input type="text" name="first_name">
+    <br>
     <label>Last name:</label><input type="text" name="last_name">
     <br>
     <c:forEach items="${conCourses}" var="course">
-        <input type="checkbox" id="${course.id}" name="id" value="${course.id}"/>
+        <input type="checkbox" id="${course.id}" name="id" value="${course.id}" class="asd"/>
         <label for="${course.id}">${course.courseName}</label>
     </c:forEach>
     <br>

@@ -9,10 +9,14 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        <%@include file="/WEB-INF/view/css/styleForm.css"%>
+    </style>
 </head>
 <body>
 <form action="/course/controller/course/update/${course.id}" method="post">
     <label>Course name:</label><input value="${course.courseName}" type="text" name="courseName">
+    <br>
     <label>Duration:</label><input value="${course.duration}" type="date" name="duration">
     <br>
     <input type="submit" value="update-course">

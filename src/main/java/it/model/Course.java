@@ -21,7 +21,7 @@ public class Course {
     //Duration-Продолжительность
     private String duration;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Company company;
 
     @ManyToMany(cascade = CascadeType.ALL)

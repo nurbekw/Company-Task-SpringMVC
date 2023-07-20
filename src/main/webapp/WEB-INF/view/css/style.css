@@ -1,0 +1,17 @@
+body{
+    background-image:url("https://pibig.info/uploads/posts/2022-11/1669644492_1-pibig-info-p-krasivie-oboi-oboi-1.jpg") ;
+    background-position: 20%;
+    background-size: cover;
+    height: 100vh;
+}
+table{
+    margin-left: 325px;
+    border: none;
+    background-color: #9902fd;
+}
+.button{
+    margin-left: 1000px;
+    border-radius: 15px;
+  width: 150px;
+    height: 50px;
+}

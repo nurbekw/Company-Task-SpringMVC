@@ -70,7 +70,7 @@ public class MyConfig implements WebMvcConfigurer {
         Properties properties = new Properties();
         properties.setProperty(Environment.DRIVER,"org.hibernate.dialect.PostgreSQLDialect");
         properties.setProperty(Environment.SHOW_SQL,"true");
-        properties.setProperty(Environment.HBM2DDL_AUTO,"create");
+        properties.setProperty(Environment.HBM2DDL_AUTO,"update");
         return  properties;
     }
 }

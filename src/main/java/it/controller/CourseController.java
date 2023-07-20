@@ -14,18 +14,19 @@ public class CourseController {
     private final CompanyRepository companyRepository;
 
     private final CourseRepository courseRepository;
+
     public CourseController(CompanyRepository companyRepository, CourseRepository courseRepository) {
         this.companyRepository = companyRepository;
         this.courseRepository = courseRepository;
     }
 
     @GetMapping("/menu")
-    public String menu(){
+    public String menu() {
         return "redirect:/";
     }
 
     @GetMapping("/backToCompany")
-    public String backToCompany(){
+    public String backToCompany() {
         return "redirect:/";
     }
 
@@ -36,7 +37,7 @@ public class CourseController {
     }
 
     @PostMapping("/form-course")
-    public String save(@RequestParam("courseName") String courseName, @RequestParam("duration") String duration,@RequestParam("id") Long id) {
+    public String save(@RequestParam("courseName") String courseName, @RequestParam("duration") String duration, @RequestParam("id") Long id) {
         Company company = companyRepository.findById(id);
         Course course = new Course();
         course.setCourseName(courseName);
@@ -48,7 +49,7 @@ public class CourseController {
 
     @GetMapping("/courseForm")
     public String saveCoursePage(Model model) {
-        model.addAttribute("conCompany",companyRepository.findAllCompany());
+        model.addAttribute("conCompany", companyRepository.findAllCompany());
         return "course-form";
     }
 
